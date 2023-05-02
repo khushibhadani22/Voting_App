@@ -88,6 +88,20 @@ class _HomePageState extends State<HomePage> {
                                                 backgroundColor:
                                                     Colors.cyan.shade900,
                                               ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: const Text(
+                                                "No",
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
+                                            ),
+                                            ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor:
+                                                    Colors.cyan.shade900,
+                                              ),
                                               onPressed: () async {
                                                 int vote = documents[i]['vote'];
                                                 vote++;
@@ -113,26 +127,17 @@ class _HomePageState extends State<HomePage> {
                                                         email: Global
                                                             .user!['email']);
                                                 Global.user!['vote'] = true;
+                                                setState(() {
+                                                  Global.voteP
+                                                      .add(documents[i]);
+                                                  print(Global.voteP);
+                                                });
                                                 Navigator.of(context)
                                                     .pushReplacementNamed(
                                                         'vote_page');
                                               },
                                               child: const Text(
                                                 "Yes",
-                                                style: TextStyle(
-                                                    color: Colors.white),
-                                              ),
-                                            ),
-                                            ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.cyan.shade900,
-                                              ),
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: const Text(
-                                                "No",
                                                 style: TextStyle(
                                                     color: Colors.white),
                                               ),
@@ -170,10 +175,11 @@ class _HomePageState extends State<HomePage> {
                                         width: 100,
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
-                                              image: NetworkImage(
-                                                  "${documents[i]['cImage']}"
-                                                  //  "https://upload.wikimedia.org/wikipedia/commons/c/c0/Official_Photograph_of_Prime_Minister_Narendra_Modi_Potrait.png"
-                                                  )),
+                                            image: NetworkImage(
+                                                "${documents[i]['cImage']}"
+                                                //  "https://upload.wikimedia.org/wikipedia/commons/c/c0/Official_Photograph_of_Prime_Minister_Narendra_Modi_Potrait.png"
+                                                ),
+                                          ),
                                         ),
                                       ),
                                       Column(
@@ -181,15 +187,15 @@ class _HomePageState extends State<HomePage> {
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            "${documents[i]['primeName']}",
+                                            "${documents[i]['cName']}",
                                             style: TextStyle(
                                               color: Colors.cyan.shade900,
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 30,
+                                              fontSize: 25,
                                             ),
                                           ),
                                           Text(
-                                            "${documents[i]['cName']}",
+                                            "${documents[i]['primeName']}",
                                             style: TextStyle(
                                               color: Colors.cyan.shade900,
                                               // fontWeight: FontWeight.bold,

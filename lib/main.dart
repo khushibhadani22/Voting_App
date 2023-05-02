@@ -2,10 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:voting_app/view/screen/homePage.dart';
+import 'package:voting_app/view/screen/leaderBoard.dart';
 import 'package:voting_app/view/screen/loginPage.dart';
 import 'package:voting_app/view/screen/ragistrationPage.dart';
 import 'package:voting_app/view/screen/splashScreen.dart';
-import 'package:voting_app/view/screen/votePage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -42,7 +42,9 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Spacer(),
+                const SizedBox(
+                  height: 20,
+                ),
                 Image.asset('assets/images/vote1.png'),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -206,7 +208,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -39,7 +39,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Spacer(),
+                const SizedBox(
+                  height: 20,
+                ),
                 Image.asset('assets/images/vote1.png'),
                 Text(
                   "Registered Your Account",
@@ -177,7 +179,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

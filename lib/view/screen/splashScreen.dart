@@ -25,22 +25,6 @@ class _IntroScreenState extends State<IntroScreen>
       ),
     );
 
-    sizeAnimation =
-        Tween<double>(begin: 50, end: 200).animate(animationController);
-    textAnimation = TextStyleTween(
-      begin: const TextStyle(
-        color: Colors.cyan,
-        fontSize: 10,
-        fontWeight: FontWeight.bold,
-      ),
-      end: TextStyle(
-        color: Colors.cyan.shade900,
-        fontWeight: FontWeight.bold,
-        fontSize: 30,
-      ),
-    ).animate(animationController);
-
-    animationController.forward();
     Timer(const Duration(seconds: 4), () {
       Navigator.of(context).pushReplacementNamed('login_page');
     });
@@ -63,13 +47,18 @@ class _IntroScreenState extends State<IntroScreen>
               builder: (context, widget) {
                 return Column(
                   children: [
-                    RotationTransition(
-                      turns: animationController,
+                    TweenAnimationBuilder(
+                      tween: Tween<double>(begin: 0, end: 1),
+                      duration: const Duration(seconds: 2),
+                      builder: (context, val, widget) {
+                        return Transform.scale(
+                          scale: val,
+                          child: widget,
+                        );
+                      },
                       child: const CircleAvatar(
                         radius: 90,
-                        backgroundImage: AssetImage(
-                          'assets/images/vote.jpg',
-                        ),
+                        backgroundImage: AssetImage('assets/images/vote.jpg'),
                       ),
                     ),
                     const SizedBox(
@@ -77,7 +66,11 @@ class _IntroScreenState extends State<IntroScreen>
                     ),
                     Text(
                       "Voting App",
-                      style: textAnimation.value,
+                      style: TextStyle(
+                        color: Colors.cyan.shade900,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),
                     ),
                   ],
                 );
