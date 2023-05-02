@@ -16,9 +16,3 @@
   <img src = "https://user-images.githubusercontent.com/122794880/235681599-141cd664-81fa-4d9e-825c-99994aff816a.png" height="500px"/> |
   <img src = "https://user-images.githubusercontent.com/122794880/235681625-c45f4dcb-5242-4d05-83b3-4e72f427fadd.png" height="500px"/> |
   <img src = "https://user-images.githubusercontent.com/122794880/235681662-b8d81ba2-4e24-4c8b-9f7a-7dc854a0bede.png" height="500px"/> 
-
-
-![Screenshot 2023-05-02 at 6 59 23 PM]()
-![Screenshot 2023-05-02 at 6 59 35 PM]()
-![Screenshot 2023-05-02 at 6 59 58 PM]()
-![Screenshot 2023-05-02 at 7 00 36 PM]()
