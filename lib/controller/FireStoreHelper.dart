@@ -6,19 +6,27 @@ class CloudFireStoreHelper {
   static final CloudFireStoreHelper cloudFireStoreHelper =
       CloudFireStoreHelper._();
 
-  CollectionReference leaderboard =
-      FirebaseFirestore.instance.collection('leaderboard');
+  static FirebaseFirestore fireStore = FirebaseFirestore.instance;
 
-  static final FirebaseFirestore firebaseFireStore = FirebaseFirestore.instance;
+  CollectionReference? collectionReference;
+
+  connectCollection() {
+    collectionReference = fireStore.collection('leaderboard');
+  }
+
+  // CollectionReference leaderboard =
+  //     FirebaseFirestore.instance.collection('leaderboard');
+
+  // static final FirebaseFirestore firebaseFireStore = FirebaseFirestore.instance;
   late CollectionReference partyRef;
   late CollectionReference userRef;
 
   void connectWithPartyCollection() {
-    partyRef = firebaseFireStore.collection('party');
+    partyRef = fireStore.collection('party');
   }
 
   void connectWithUserCollection() {
-    userRef = firebaseFireStore.collection('user');
+    userRef = fireStore.collection('user');
   }
 
   Future<void> insertRecord({

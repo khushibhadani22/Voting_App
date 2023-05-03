@@ -3,14 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 class FireBaseAuthHelper {
   FireBaseAuthHelper._();
   static final FireBaseAuthHelper fireBaseAuthHelper = FireBaseAuthHelper._();
-  static final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
-  //------------------------------------------------------------------------
   Future<void> signOut() async {
     await firebaseAuth.signOut();
   }
 
-//------------------------------------------------------------------------
   Future<User?> registerUser(
       {required String email, required String password}) async {
     try {

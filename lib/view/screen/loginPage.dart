@@ -155,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () async {
                       if (loginFormKey.currentState!.validate()) {
                         loginFormKey.currentState!.save();
-                        await CloudFireStoreHelper.firebaseFireStore
+                        await CloudFireStoreHelper.fireStore
                             .collection('user')
                             .doc(email!)
                             .snapshots()

@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                                                 setState(() {
                                                   Global.voteP
                                                       .add(documents[i]);
-                                                  print(Global.voteP);
+                                                  print(Global.user!['vote']);
                                                 });
                                                 Navigator.of(context)
                                                     .pushReplacementNamed(
